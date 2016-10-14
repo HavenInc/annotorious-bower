@@ -14,19 +14,19 @@ annotorious.plugin.dotSelector.Selector.prototype.init = function(annotator, can
   console.log(annotator);
 
   var that = this;
-  this.overAnnot    = false;
-  this.clickedAnnot = false;
-  this._canvas = canvas;
-  this._annotator = annotator;
-  this._g2d = canvas.getContext("2d");
+  this.overAnnot      = false;
+  this.clickedAnnot   = false;
+  this._canvas        = canvas;
+  this._annotator     = annotator;
+  this._g2d           = canvas.getContext("2d");
   this._g2d.lineWidth = 1;
   this._anchor;
   this._opposite;
-  this._enabled = false;
-  this._mouseMoveListener;
-  this._mouseUpListener;
-  this.desiredWidth  = 24;
-  this.desiredHeight = 24;
+  this._enabled       = false;
+  // this._mouseMoveListener;
+  // this._mouseUpListener;
+  this.desiredWidth   = 24;
+  this.desiredHeight  = 24;
 
   anno.addHandler('onMouseOverItem', function(ev) {
     console.log('onMouseOverItem annotator: ',annotator);
