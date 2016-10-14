@@ -29,18 +29,18 @@ annotorious.plugin.dotSelector.Selector.prototype.init = function(annotator, can
   this.desiredHeight = 24;
 
   anno.addHandler('onMouseOverItem', function(ev) {
-    console.log('nb',annotator);
+    console.log('onMouseOverItem annotator: ',annotator);
     anno.showAnnotations();
-    annotator.c.style.cursor = "text";
   });
 
-  anno.addHandler('onMouseOutOfItem', function(ev) {
-    anno.hideAnnotations();
-  });
+  // anno.addHandler('onMouseOutOfItem', function(ev) {
+    // console.log('onMouseOutOfItem event', ev);
+    // anno.hideAnnotations();
+  // });
 
   anno.addHandler('onMouseoverAnnotation', function(ev) {
 
-    console.log(ev);
+    console.log('onMouseoverAnnotation event', ev);
 
     if(ev.C){
       that.overAnnot = true;
@@ -50,21 +50,12 @@ annotorious.plugin.dotSelector.Selector.prototype.init = function(annotator, can
   });
 
   anno.addHandler('onMouseOutOfAnnotation', function(ev) {
-
+    console.log('onMouseOutOfAnnotation event', ev);
     if(ev.C){
       that.overAnnot = false;
-      annotator.c.style.cursor = "text";
     }
 
   });
-
-  // anno.setProperties({
-  //   outline    : 'rgba(55,55,255,1)',
-  //   stroke     : 'blue',
-  //   fill       : 'blue',
-  //   hi_stroke  : 'blue',
-  //   hi_fill    : 'blue'
-  // });
 
   anno.setProperties({
     outline    : '#3db787',
@@ -264,33 +255,5 @@ annotorious.plugin.dotSelector.Selector.prototype.getViewportBounds = function()
     left: left
   }
 };
-
-// annotorious.plugin.dotSelector.Selector.prototype.drawShape = function(g2d, shape, highlight) {
-
-//   console.log('HERE');
-
-//   if (shape.type == "rect") {
-
-//     var color, lineWidth;
-
-//     if (highlight) {
-//       color = "#ffffff";
-//       lineWidth = 3;
-//     } else {
-//       color = "#da2a54";
-//       lineWidth = 3;
-//     }
-
-//     var geom = shape.geometry;
-//     g2d.strokeStyle = "#000000";
-//     g2d.lineWidth = lineWidth;
-//     // g2d.strokeRect(geom.x + .5, geom.y + .5, geom.width + 1, geom.height + 1);
-//     g2d.strokeStyle = color;
-//     g2d.strokeRect(geom.x + 3, geom.y + 3, geom.width + 3, geom.height + 3)
-
-//   }
-
-// };
-
 
 anno.addPlugin('dotSelector', { activate: true });
