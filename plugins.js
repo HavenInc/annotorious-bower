@@ -33,10 +33,10 @@ annotorious.plugin.dotSelector.Selector.prototype.init = function(annotator, can
     anno.showAnnotations();
   });
 
-  // anno.addHandler('onMouseOutOfItem', function(ev) {
-    // console.log('onMouseOutOfItem event', ev);
-    // anno.hideAnnotations();
-  // });
+  anno.addHandler('onMouseOutOfItem', function(ev) {
+    console.log('onMouseOutOfItem event', ev);
+    anno.hideAnnotations();
+  });
 
   anno.addHandler('onMouseoverAnnotation', function(ev) {
 
