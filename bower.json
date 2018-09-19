@@ -17,7 +17,7 @@
   "license": "MIT",
   "ignore": [],
   "description": "Image Annotation for the Web - Annotorious Core Library",
-  "version": "0.6.3b",
+  "version": "0.6.3e",
   "main": [
     "./annotorious.min.js",
     "./css/annotorious.css",
